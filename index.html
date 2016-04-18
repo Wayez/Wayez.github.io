@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+  </head>
+  <body>
+
+    <div id="top">
+      <div class="bluegopher">
+	<img src="imgs/bluegopher.png" alt="bluegopher" height="100px" width="auto">
+      </div>
+
+      <div id="title">
+	The Go Programming Language
+      </div>
+
+      <div id="desc">
+	Go is an open source programming language that is statically typed and compiled.
+	It has many features including memory allocation, garbage collection, and built-in
+	support for concurrent programming.
+      </div>
+
+    </div>
+
+    <br>
+    <button class="accordion">History and Development</button>
+    <div class="panel">
+      <p>The development of Go began because of problems with:
+
+
+	<ul>
+	  <li>network systems</li>
+	  <li>multicore-processors</li>
+	  <li>massive computation clusters</li>
+
+	</ul>
+      </p>
+      <p>
+	Robert Griesemer, Rob Pike, and Ken Thompson began to develop Go in 2007 and it was first released in 2009. It was created to handle the large scale of programming at Google.
+	<br><br>
+	It is now used in part for services and projects developed by Google, Dropbox, MongoDB, Soundcloud, Uber, and many others.
+
+
+      </p>
+
+
+    </div>
+
+    <br><br>
+
+    <button class="accordion">Pros and Cons</button>
+    <div class="panel">
+      <canvas id="comp" width="600" height="850">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      </canvas>
+    </div>
+
+    <br><br>
+
+    <button class="accordion">Code Snippets and Examples</button>
+    <div class="panel">
+    	<p>Declares the file as the main. Importing libraries is fairly straightforward.</p>
+      	<pre>
+      		package main
+
+      		import ("fmt"
+      			"time"
+      			"math/rand")</pre>
+      	<p>The code below creates the Adventurer struct. Note that types are required and postscripted.</p>
+      	<pre>
+      	type Adventurer struct {
+      		hp, mp int
+      	}</pre>
+      	<p>Go allows for blank returns. The return type of the NewAdventurer function returns an Adventurer pointer named tom. This automatically initializes tom to the specified type. The blank return will return the variable named as the return value.</p>
+      	<pre>
+      	func NewAdventurer() (tom *Adventurer){
+      		tom = &Adventurer{hp:10,mp:5}
+      		return
+      	}</pre>
+      	<p>Similar to prototyping in Javascript, the following code attaches the GetHP() and Heal() function to an object. As a result, objects can be simulated in Go.</p>
+      	<p>When the <code>var</code> keyword is used in function declarations, the type can be omitted. Go is statically typed, so it is still necessary to keep track of variable types.</p>
+      	<pre>
+      	func (tom *Adventurer) GetHP() int{
+	      	return tom.hp
+		}
+
+		func (tom *Adventurer) Heal() int{
+	    	var healed = rand.Intn(5)
+	    	(*tom).hp += healed
+	    	return healed
+		}</pre>
+	<p>Similarly to <code>var</code>, the <code>:=</code> assignment can be used for implicit type declaration for variables defined within functions.</p>
+	<pre>
+	func (tom *Adventurer) Damage() int{
+		damaged := rand.Intn(5)
+		(*tom).hp -= damaged
+		return damaged
+	}</pre>
+	<p>Similarly to <code>var</code>, the <code>:=</code> assignment can be used for implicit type declaration for variables defined within functions.</p>
+	<pre>
+	func (tom *Adventurer) Damage() int{
+		damaged := rand.Intn(5)
+		(*tom).hp -= damaged
+		return damaged
+	}</pre>
+	<p>Similarly to <code>var</code>, the <code>:=</code> assignment can be used for implicit type declaration for variables defined within functions.</p>
+	<p>Parentheses are not necessary for control statements. The code below also shows how Go allows for multiple operations in <code>if</code> and <code>for</code> statements when separated by semicolons. The <code>else</code> keyword must also go on the same line as the ending <code>if</code> bracket.</p>
+	<pre>
+	func (tom *Adventurer) DoSomething(){
+		var change int
+		fmt.Printf("You pick something off the floor. You dust it off
+            and eat it.\n")
+		time.Sleep(2 * time.Second)
+		if chance := rand.Float32() ; chance < 0.5 {
+			change = tom.Damage()
+			fmt.Printf("It's poison. You lose %d hp.\n",change)
+		} else {
+			change = tom.Heal()
+			fmt.Printf("It's a cookie. Moldy, but good. It heals you for
+                %d hp.\n",change)
+		}
+	}</pre>
+	<p>Below is the main function. To run the code, try downloading one of Go's compilers, gc or gccgo.</p>
+	<pre>
+	func main() {
+		var Jerry *Adventurer = NewAdventurer()
+		fmt.Printf("You are Jerry the Adventurer. Let's start you off with
+            10 hp.\n")
+		fmt.Printf("Hi, Jerry. What are you going to do now?\n")
+		rand.Seed(time.Now().Unix())
+		Jerry.DoSomething()
+		fmt.Printf("Jerry, you now have %d hp. What is wrong with you, Jerry.
+            Go get a real job.\n",
+	                    Jerry.GetHP())
+ 	}</pre>
+ 	<p>Nows a time to note other quirks and conventions of Go.</p>
+ 	<ul>
+ 		<li>There are no <code>while</code> loops. Everything is a <code>for</code> loop.</li>
+ 		<li>Function names are capitalized and camelcased.</li>
+ 		<li>Go enforces good practices. Programmers must use all variables and libraries.</li>
+ 		<li>Go's goroutines are a lightweight method of executing concurrent programs. Learn more <a href="https://tour.golang.org/concurrency/1">here</a>.</li>
+ 	</ul>
+    </div>
+
+    <div class="gopher">
+      <a href="https://golang.org/">
+	<img src="imgs/gopher.png" alt="gopher" height="400" width="auto"></img>
+      </a>
+    </div>
+
+    <p>
+      Click the brown gopher to go to the official golang page.
+    </p>
+    <script src="index.js"></script>
+
+  </body>
+</html>
