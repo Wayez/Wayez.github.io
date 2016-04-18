@@ -1,0 +1,86 @@
+button.accordion {
+    background-color: #ff8833;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 50%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 24px;
+    transition: 0.4s;
+}
+
+button.accordion.active, button.accordion:hover {
+    background-color: #ff6a00;
+}
+
+button.accordion:after {
+    content: '\02C5';
+    font-size: 25px;
+    color: white;
+    float: right;
+    margin-left: 5px;
+}
+
+button.accordion.active:after {
+    content: '\02C4';
+}
+
+div.panel {
+    padding: 0 18px;
+    display: none;
+    background-color: white;
+}
+
+div.panel.show {
+    display: block !important;
+}
+
+div.gopher{
+    position: fixed;
+    left: 70%;
+    bottom: 20%;
+
+}
+
+div.bluegopher{
+    position: absolute;
+    float: left;
+    bottom: 82%;
+}
+
+#top{
+    background-color: #ff8833;
+    padding: 60px;
+}
+
+#title{
+    position: absolute;
+    font-size: 30px;
+    color: white;
+    left: 10%;
+    bottom: 85%;
+}
+
+#desc{
+    position: absolute;
+    font-size: 20px;
+    color: white;
+    left: 40%;
+    bottom: 85%;
+    width: 50%;
+}
+
+pre{
+    width: 50%;
+    word-wrap: break-word;
+    background-color: #cecaca;
+    background-size: contain;
+}
+
+p{
+    word-wrap: break-word;
+    width: 50%;
+    font-size: 20px;
+}
